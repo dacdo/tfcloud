@@ -32,9 +32,9 @@ resource "aws_instance" "dev-vm1" {
   instance_type = lookup(var.inst_type, var.env)
   vpc_security_group_ids = ["${aws_security_group.allow_http.id}"]
 }
-resource "aws_instance" "dev-vm2" {
-  ami = "ami-018e347dfe0c44534"
-  subnet_id = aws_subnet.subnet2.id
-  instance_type = lookup(var.inst_type, var.env)
-  vpc_security_group_ids = ["${aws_security_group.allow_http.id}"]
-}
+# resource "aws_instance" "dev-vm2" {
+#   ami = "ami-018e347dfe0c44534"
+#   subnet_id = aws_subnet.subnet2.id
+#   instance_type = lookup(var.inst_type, var.env)
+#   vpc_security_group_ids = ["${aws_security_group.allow_http.id}"]
+# }
