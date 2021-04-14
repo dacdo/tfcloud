@@ -1,5 +1,5 @@
 provider "aws" {
-  region = "us-west-2"
+  region = "us-west-2a"
 }
 resource "aws_vpc" "dd_vpc" {
   cidr_block = "10.0.0.0/16"
