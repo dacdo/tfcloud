@@ -7,6 +7,7 @@ resource "aws_vpc" "dd_vpc" {
 resource "aws_subnet" "subnet1" {
   vpc_id = aws_vpc.dd_vpc.id
   cidr_block = "10.0.1.0/24"
+  availability_zone = "us-west-2a"
 }
 resource "aws_subnet" "subnet2" {
   vpc_id = aws_vpc.dd_vpc.id
