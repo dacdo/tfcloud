@@ -26,12 +26,15 @@ resource "aws_security_group" "allow_http" {
     cidr_blocks = ["0.0.0.0/0"]
   }
 }
-# resource "aws_instance" "dev-vm1" {
-#   ami = "ami-018e347dfe0c44534"
-#   subnet_id = aws_subnet.subnet1.id
-#   instance_type = lookup(var.inst_type, var.env)
-#   vpc_security_group_ids = ["${aws_security_group.allow_http.id}"]
-# }
+resource "aws_instance" "dev-vm1" {
+  ami = "ami-000d6375f955d3d80"
+  subnet_id = aws_subnet.subnet1.id
+  instance_type = lookup(var.inst_type, var.env)
+  vpc_security_group_ids = ["${aws_security_group.allow_http.id}"]
+  tags = {
+    Name = "DacDo"
+  }
+}
 # resource "aws_instance" "dev-vm2" {
 #   ami = "ami-018e347dfe0c44534"
 #   subnet_id = aws_subnet.subnet2.id
